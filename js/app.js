@@ -1,32 +1,36 @@
 import '../css/app.scss';
 import $ from "jquery";
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import 'waypoints';
-import 'scrollTo';
 
-/**
- * EXAMPLE JS STARTS
- */
-$(function() {
-    $('[id^=scrollTo]').click(function() {
-        var id = $(this).attr('id').slice(9);
-        $(window).scrollTo($('#' + id), 1000, { offset: { top: -51, left: 0 } });
-    });
+$('.bid-view').hide()
 
-    $('#marketing').waypoint(function() {
-        $('.img-circle').addClass('animated zoomIn');
-    }, {
-        offset: '50%',
-        triggerOnce: true
-    });
+const newLeaderTemplate = (name, nepo, corrup, wrights, gayrights, violence) => {
+  return (`<li>
+              <h3>${name}</h3>
+              <p>Stats:</p>
+              Nepotism: <input type='range' min='0' max='10' step='1' value='${nepo}'/><span class='slider-value'></span>
+              Corruption: <input type='range' min='0' max='10' step='1' value='${corrup}'/><span class='slider-value'></span>
+              Women's Rights: <input type='range' min='0' max='10' step='1' value='${wrights}'/><span class='slider-value'></span>
+              LGBTQ Rights: <input type='range' min='0' max='10' step='1' value='${gayrights}'/><span class='slider-value'></span>
+              Violence: <input type='range' min='0' max='10' step='1' value='${violence}'/><span class='slider-value'></span>
+              <button class='bid-button'>Bid on this leader!</button>
+            </li>`)
+}
 
-    $('.featurette').waypoint(function() {
-        $('#' + this.element.id + ' .featurette-image').addClass('animated pulse');
-    }, {
-        offset: '50%',
-        triggerOnce: true
-    });
-});
-/**
- * EXAMPLE JS ENDS
- */
+$('.submit-leader').on('click', function(){
+  let name = $('.name').val();
+  let nepo = $('.nepotism').val();
+  let corrup = $('.corruption').val();
+  let gayrights = $('.lgbt-rights').val();
+  let women = $('.w-rights').val();
+  let violence = $('.violence').val();
+  $('.leaders-list').prepend(newLeaderTemplate(name, nepo, corrup, women, gayrights, violence))
+})
+
+$('.submit-bid').on('click', function(){
+  alert('Your bid has been submitted!');
+})
+
+$('.leaders-list').on('click', 'button', function(e){
+  e.preventDefault();
+  $('.bid-view').slideToggle();
+})

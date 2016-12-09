@@ -4,66 +4,57 @@
 @import "color";
 @import "carousel";
 
-/* EXAMPLE CSS STARTS */
-.jumbotron {
-    margin-bottom: 0;
+body {
+  padding: 40px;
+  background: url(http://altoday.com/wp-content/uploads/2015/12/Trump-Christmas.jpg) no-repeat center center fixed;
 }
 
-#marketing {
-    padding-top: 60px;
-    .col-lg-4 {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    h2 {
-        font-weight: normal;
-    }
-    .col-lg-4 p {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+header {
+  margin: 40px;
 }
 
-.featurette-divider {
-    margin: 80px 0;
+button {
+  margin: 20px;
 }
 
-.featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -1px;
+.main-wrap{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-#contact-us .jumbotron {
-    background-color: #ffffff;
-    p {
-        &:not(:first-of-type) {
-            font-size: 18px;
-        }
-    }
+h1 {
+  color: white;
+  font-size: 3em;
 }
 
-.footer {
-    padding: 40px 0;
-    color: #999;
-    text-align: center;
-    background-color: #f8f8f8;
-    border-top: 1px solid #e7e7e7;
-    p:last-child {
-        margin-bottom: 0;
-    }
+.leader-form {
+  font-size: 1.5em;
+  flex-grow: 1;
+  background-color:rgba(230, 230, 230, 0.9);
+  border: 1px solid black;
+  padding: 15px;
+  max-width: 500px;
+  margin-right: 50px;
 }
 
-@media (min-width: 768px) {
-    .featurette-heading {
-        font-size: 50px;
-    }
+.bid-view {
+  font-size: 1.5em;
+
+  flex-grow: .4;
+  max-width: 500px;
+  margin-right: 40px;
+  background-color:rgba(230, 230, 230, 0.9);
+  border: 1px solid black;
+  padding: 15px;
 }
 
-@media (min-width: 992px) {
-    .featurette-heading {
-        margin-top: 120px;
-    }
+.available-leaders {
+  font-size: 1.5em;
+  flex-grow: 1;
+  background-color:rgba(230, 230, 230, 0.9);
+  float: right;
+  border: 1px solid black;
+  padding: 15px;
+  max-width: 500px;
 }
-
-/* EXAMPLE CSS ENDS */
